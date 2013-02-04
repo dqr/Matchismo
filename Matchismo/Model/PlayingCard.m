@@ -19,12 +19,12 @@
 
 + (NSArray *)validSuites
 {
-    static NSArray *validSuites = nil;
-    if (!validSuites)
+    static NSArray *validSuits = nil;
+    if (!validSuits)
     {
-        validSuites = @[@"♥", @"♦", @"♠", @"♣"];
+        validSuits = @[@"♥", @"♦", @"♠", @"♣"];
     }
-    return validSuites;
+    return validSuits;
 }
 
 + (NSUInteger)maxRank
