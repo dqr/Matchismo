@@ -17,7 +17,7 @@
 
 @synthesize suit = _suit;
 
-+ (NSArray *)validSuites
++ (NSArray *)validSuits
 {
     static NSArray *validSuits = nil;
     if (!validSuits)
@@ -34,7 +34,7 @@
 
 - (void)setSuit:(NSString *)suit
 {
-    if ([[PlayingCard validSuites] containsObject:suit])
+    if ([[PlayingCard validSuits] containsObject:suit])
     {
         _suit = suit;
     }
