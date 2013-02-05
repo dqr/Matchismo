@@ -7,6 +7,8 @@
 //
 
 #import "CardGameViewController.h"
+#import "Deck.h"
+#import "PlayingCardDeck.h"
 
 @interface CardGameViewController ()
 
@@ -14,9 +16,21 @@
 
 @property (nonatomic) int flipCount;
 
+@property (strong, nonatomic) Deck *deck;
+
 @end
 
 @implementation CardGameViewController
+
+// use lazy instantiation for the deck getter
+- (Deck *)deck
+{
+    if (!_deck)
+    {
+        _deck = [[PlayingCardDeck alloc] init];
+    }
+    return _deck;
+}
 
 - (void) setFlipCount:(int)flipCount
 {
@@ -27,6 +41,11 @@
 - (IBAction)flipCard:(UIButton *)sender
 {
     sender.selected = !sender.isSelected;
+    Card *card = [self.deck drawRandomCard];
+    // if we went face up (isSelected), then
+    // get a random card and set our button's label
+    // text from contents
+    [sender setTitle:card.contents forState:UIControlStateSelected];
     self.flipCount++;
 }
 
