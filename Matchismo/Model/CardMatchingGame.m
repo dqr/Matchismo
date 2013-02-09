@@ -27,7 +27,7 @@
     self = [super init];
     if (self)
     {
-        for (int i = 0; int < count; i++)
+        for (int i = 0; i < count; i++)
         {
             Card *card = [deck drawRandomCard];
             if (!card)
