@@ -42,10 +42,11 @@ Assignment 1.
 
 Task 1 - just do the walkthrough that's in the lecture 3 slides.  Done.
 
-Task 2 - add 4 more cards.  Copy/Paste last row.  Trick is to be sure to add the cpied buttons to the outlet collection.
+Task 2 - add 4 more cards.  Copy/Paste last row.  Trick is to be sure to add the copied buttons to the outlet collection.
 
-Task 3 -left off here.
+Task 3 - add a label for the match results.  Added the label in the storyboard, add a new flipResultsProperty to the model, and modify the controller to update the view (storyboard) based on the results from the model (CarMatchingGame).
 
+Task 4 - Add a deal button.  Added a Deal button and wired up to the controller as an Action (drag to inside implementation).  Code for dealNewDeck nils the game so we alloc init a new one on next reference.  Then clean up flip count and flipResults labels (score is automatic via new game), and update the UI.
 
 
 ## Random Notes

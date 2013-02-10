@@ -24,6 +24,16 @@
 
 @implementation CardGameViewController
 
+- (IBAction)dealNewGame:(UIButton *)sender
+{
+    // nil out the current game so we start a new one
+    self.game = nil;
+    self.flipCount = 0;
+    self.flipUpResult.text = @"Lets Play!";
+    //update the UI
+    [self updateUI];
+}
+
 //lazily instantiate the model
 - (CardMatchingGame *)game
 {
