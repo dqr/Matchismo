@@ -20,5 +20,6 @@
 - (Card *)cardAtIndex:(NSInteger)index;
 
 @property (nonatomic, readonly) int score;
+@property (nonatomic, readonly) NSString *flipResults;
 
 @end

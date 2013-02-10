@@ -38,6 +38,14 @@ Slides 34 - 43 deal with what was done in HW 0, i.e. making a random deck, not j
 
 Slides xxx
 
+Assignment 1.
+
+Task 1 - just do the walkthrough that's in the lecture 3 slides.  Done.
+
+Task 2 - add 4 more cards.  Copy/Paste last row.  Trick is to be sure to add the cpied buttons to the outlet collection.
+
+Task 3 -left off here.
+
 
 
 ## Random Notes

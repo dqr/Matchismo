@@ -18,6 +18,7 @@
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 @property (strong, nonatomic) CardMatchingGame *game;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
+@property (weak, nonatomic) IBOutlet UILabel *flipUpResult;
 
 @end
 
@@ -60,8 +61,8 @@
 
 - (IBAction)flipCard:(UIButton *)sender
 {
-    NSLog(@"dwr was here");
     [self.game flipCardAtIndex:[self.cardButtons indexOfObject:sender]];
+    self.flipUpResult.text = self.game.flipResults;
     self.flipCount++;
     [self updateUI];
 }
