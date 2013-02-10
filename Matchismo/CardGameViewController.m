@@ -60,6 +60,7 @@
 
 - (IBAction)flipCard:(UIButton *)sender
 {
+    NSLog(@"dwr was here");
     [self.game flipCardAtIndex:[self.cardButtons indexOfObject:sender]];
     self.flipCount++;
     [self updateUI];
