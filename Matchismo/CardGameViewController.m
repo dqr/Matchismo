@@ -23,6 +23,10 @@
 @end
 
 @implementation CardGameViewController
+- (IBAction)matchSizeSelected:(UISegmentedControl *)matchPicker
+{
+    NSLog(@"matchSizeSelected, index: %d", matchPicker.selectedSegmentIndex);
+}
 
 - (IBAction)dealNewGame:(UIButton *)sender
 {

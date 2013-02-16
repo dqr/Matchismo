@@ -48,6 +48,35 @@ Task 3 - add a label for the match results.  Added the label in the storyboard, 
 
 Task 4 - Add a deal button.  Added a Deal button and wired up to the controller as an Action (drag to inside implementation).  Code for dealNewDeck nils the game so we alloc init a new one on next reference.  Then clean up flip count and flipResults labels (score is automatic via new game), and update the UI.
 
+Task 5 - Add a 3 card mode and make it switchable between 2 card and 3 card mode.
+
+Added a UISegmentedControl to view.  Connected the valueChanged action and stubbed it out with an NSLog.
+Next step is to flesh this out with the model changes to support different number of matches, and to kick the model as the action to value changed.
+
+For the points calculation:
+
+<pre>
+From the CardMatchingGame model file:
+
+#define flipCost 1
+#define MATCH_BONUS 4
+#define MISMATCH_PENALTY 2
+
+From the PlayingCard model file:
+
+if ([otherCard.suit isEqualToString:self.suit])
+{
+    score = 1;
+}
+else if (otherCard.rank == self.rank)
+{
+    score = 4;
+
+</pre>
+
+That yields 4 and 16 raw score for a suit and rank match.  The 4:1 holds for any given card there are 12 others same suit and 3 others same rank.  If we choose 2 cards, then this becomes not 12:3, but 11:2 so maybe we make it 5.5:1  Of course that doesn't address the overall odds which seem harder in the case of a 3 card match.
+
+This seems again like we plop a control in the UI, add an action to the controller, and modify the model to support the 3 card logic.  Need to figure out the correct points for 3 card matches (suits and ranks), and it seems like we need to modify the logic so that we only check for matches in one mode or the the other.  That is in current 2 card mode we look for another playable face up card.  In 3 card mode we'll need to look for two of them.
 
 ## Random Notes
 
